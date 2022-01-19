@@ -1,0 +1,579 @@
+<div id="idMainDiv">
+    <div id="idDivMenu">
+        <button id="idButtonNewTask" class="btn btn-dark fontSizeText" (click)="openNav()"><i class="fa fa-tasks"
+                aria-hidden="true"></i> NEW TASK</button>
+        <button class="btn btn-light classFirstButtons" (click)="fnInfo()"><i class="fa fa-info-circle"
+                aria-hidden="true"></i>
+            INFO</button>
+        <button class="btn btn-dark classFirstButtons" (click)="fnBackToMainPage()">
+            <i class="fa fa-hand-o-left"></i> BACK</button>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <div class="classWidth">
+            <span style="display: block; margin-left: 95%;">
+                <i class="fa fa-times-circle-o fa-2x classCursor" aria-hidden="true" (click)="closeNav()"></i></span>
+            <p id="idPAlert">{{valNameTask}}</p>
+
+        </div>
+        <div class="classWidth">
+            <p>NEW TASK</p>
+        </div>
+        <div [formGroup]="taskDates">
+            <div style="display:block;">
+                <div class="mb-3 mt-3 classWidth">
+                    <input id="idNameTask" type="text" class="form-control" placeholder="Things to do"
+                        formControlName="taskName">
+                </div>
+                <div class="form-floating mb-3 classWidth">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                        formControlName="taskDescription"></textarea>
+                    <label for="floatingTextarea">Summary description</label>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-between" class="classWidth">
+                    <div class="mb-3 classWidth45">
+                        <label for="idCreationDate">Creation date</label>
+                        <input id="idCreationDate" type="date" class="form-control" formControlName="taskDate" readonly>
+                    </div>
+                    <div class="mb-3 classWidth45">
+                        <label for="idDeadline">Deadline</label>
+                        <input id="idDeadline" type="date" class="form-control" formControlName="taskDeadline">
+                    </div>
+                </div>
+                <div class="mb-3 classWidth" hidden>
+                    <label for="idCreationTime">Creation time</label>
+                    <input id="idCreationTime" type="time" class="form-control" formControlName="taskTime">
+                </div>
+                <div class="mb-3 classWidth">
+                    <label for="idResponsiblePerson">Responsible person</label>
+                    <div class="input-group mb-3">
+                        <select id="idResponsiblePerson" class="form-select" formControlName="taskPerson">
+                            <option value="{{i}}" *ngFor="let i of arrayPersons">{{i | titlecase}}</option>
+                        </select>
+                        <button class="btn btn-dark" type="button" id="button-addon2" (click)="fnAddPerson()">
+                            <i class="fa fa-user-plus"></i></button>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-between" class="classWidth">
+                    <div class="mb-3 classWidth45">
+                        <label for="idImportance">Importance</label>
+                        <select id="idImportance" class="form-select" aria-label="Default select example"
+                            formControlName="taskImportance">
+                            <option value="1">High</option>
+                            <option value="2">Middle</option>
+                            <option value="3">Lower</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 classWidth45">
+                        <label for="idEstimatedHours">Estimated Hours</label>
+                        <input id="idEstimatedHours" type="number" max="100" min="1" class="form-control"
+                            formControlName="taskHours">
+                    </div>
+                </div>
+                <div class="mb-3 classWidth" hidden>
+                    <label for="idCreationDate">Comments</label>
+                    <input id="idCreationDate" type="text" class="form-control" formArrayName="taskComments">
+                </div>
+            </div>
+            <button type="button" class="btn btn-dark"
+                style="display:block; width:40%; margin-left: auto; margin-right: auto;" (click)="fnAddTask()">
+                <i class="fa fa-plus-square" aria-hidden="true"></i> ADD TASK</button>
+            <br>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayout.sm="row wrap" fxLayout.xs="column" id="idDivAllTasks">
+        <div fxFlex.xs="100" fxFlex.sm="50" fxFlex="25" class="classBorderLeft classBorder">
+            <p id="idNotPlanned" class="classAlign">Not planned {{valNotPlanned}}
+                <i class="fa fa-gear" style="margin-left:39%;" aria-hidden="true" (click)="fnChangeStyle()"></i>
+            </p>
+            <div class="classMinHeight" cdkDropList (cdkDropListDropped)="fnNotPlanned($event)"
+                #idNotPlanned="cdkDropList" [cdkDropListData]="arrayNotPlanned" [cdkDropListConnectedTo]="[idToBeDone]">
+                <div *ngFor="let i of arrayNotPlanned; let k = index;" id="idDivTaskNotPlanned" class="classHover"
+                    cdkDrag>
+                    <p style="text-align: center; padding-top:0.5rem;">
+                        <span (dblclick)="fnDblClickNotPlanned(k)"> {{i.taskName}}</span>
+                    </p>
+                    <div fxLayout="row" fxLayoutAlign="space-around center">
+                        <span class="badge bg-success" data-title="task deadline">{{i.taskDeadline |
+                            date:'longDate'}}</span>
+                        <span class="badge bg-danger" data-title="task importance">{{i.taskImportance}}</span>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-around center" class="classPAdding03">
+                        <span class="badge bg-success" data-title="creation date">
+                            {{i.taskDate | date: 'mediumDate'}}
+                            {{i.taskTime}}</span>
+                        <span class="badge bg-info classMarginLeft1Rem" data-title="hours needed">
+                            {{i.taskHours}}
+                            hour(s)</span>
+                    </div>
+                    <div style="text-align: left; margin-top:-0.2rem; margin-left:1rem; margin-bottom:1rem;
+                    text-align: center;">
+                        <div fxFlex="50">
+                            <span data-title="responsible person" class="badge bg-warning text-dark">
+                                {{i.taskPerson | pipeNameTaskComponent}}
+                            </span>
+                        </div>
+                        <div style="text-align: right; margin-right:1rem;" fxFlex="50">
+                            <span class="badge bg-secondary text-dark classCursor" data-title="delete"
+                                (click)="fnDeleteNotPlanned(k)">
+                                <i class="fa fa-trash classColorWhite" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div fxFlex.xs="100" fxFlex.sm="50" fxFlex="25" class="classBorder">
+            <p id="idToBeDone" class="classAlign">To be done {{valToBeDone}}
+                <i class="fa fa-gear" style="margin-left:46%;" aria-hidden="true" (click)="fnChangeStyle1()"></i>
+            </p>
+            <div class="classMinHeight" cdkDropList (cdkDropListDropped)="fnToBeDone($event)" #idToBeDone="cdkDropList"
+                [cdkDropListData]="arrayToBeDone" [cdkDropListConnectedTo]="[idNotPlanned, idInProgress]">
+                <div *ngFor="let j of arrayToBeDone; let k =index;" id="idDivTaskToBeDone" class="classHover" cdkDrag>
+                    <p style="text-align: center; padding-top:0.5rem;">{{j.taskName}}
+                    </p>
+                    <div fxLayout="row" fxLayoutAlign="space-around center">
+                        <span class="badge bg-success" data-title="task deadline">{{j.taskDeadline |
+                            date:'longDate'}}</span>
+                        <span class="badge bg-danger" data-title="task importance">{{j.taskImportance}}</span>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-around center" class="classPAdding03">
+                        <span class="badge bg-success" data-title="creation date">{{j.taskDate | date: 'mediumDate'}}
+                            {{j.taskTime}}</span>
+                        <span class="badge bg-info classMarginLeft1Rem" data-title="hours needed">{{j.taskHours}}
+                            hour(s)</span>
+                    </div>
+                    <div style="text-align: left; margin-top:-0.2rem; margin-left:1rem; margin-bottom:1rem;
+                    text-align: center;">
+                        <div fxFlex="50">
+                            <span data-title="responsible person" class="badge bg-warning text-dark">
+                                {{j.taskPerson | pipeNameTaskComponent}}
+                            </span>
+                        </div>
+                        <div style="text-align: right; margin-right:1rem;" fxFlex="50">
+                            <span class="badge bg-secondary text-dark classCursor" data-title="delete"
+                                (click)="fnDeleteToBeDone(k)">
+                                <i class="fa fa-trash classColorWhite" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div fxFlex.xs="100" fxFlex.sm="50" fxFlex="25" class="classBorder">
+            <p id="idInProgress" class="classAlign">In progress {{valInProgress}}
+                <i class="fa fa-gear" style="margin-left:43%;" aria-hidden="true" (click)="fnChangeStyle2()"></i>
+            </p>
+            <div class="classMinHeight" cdkDropList (cdkDropListDropped)="fnInProgress($event)"
+                #idInProgress="cdkDropList" [cdkDropListData]="arrayInProgress"
+                [cdkDropListConnectedTo]="[idNotPlanned,idToBeDone,idDone]">
+                <div *ngFor="let i of arrayInProgress; let k = index;" id="idTaskInProgress" class="classHover" cdkDrag>
+                    <p style="text-align: center; padding-top:0.5rem;">{{i.taskName}}
+                    </p>
+                    <div fxLayout="row" fxLayoutAlign="space-around center">
+                        <span class="badge bg-success" data-title="task deadline">{{i.taskDeadline |
+                            date:'longDate'}}</span>
+                        <span class="badge bg-danger" data-title="task importance">{{i.taskImportance}}</span>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-around center" class="classPAdding03">
+                        <span class="badge bg-success" data-title="creation date">{{i.taskDate | date: 'mediumDate'}}
+                            {{i.taskTime}}</span>
+                        <span class="badge bg-info classMarginLeft1Rem" data-title="hours needed">{{i.taskHours}}
+                            hour(s)</span>
+                    </div>
+                    <div style="text-align: left; margin-top:-0.2rem; margin-left:1rem; margin-bottom:1rem;
+                    text-align: center;">
+                        <div fxFlex="50">
+                            <span data-title="responsible person" class="badge bg-warning text-dark">
+                                {{i.taskPerson | pipeNameTaskComponent}}
+                            </span>
+                        </div>
+                        <div style="text-align: right; margin-right:1rem;" fxFlex="50">
+                            <span class="badge bg-secondary text-dark classCursor" data-title="delete"
+                                (click)="fnDeleteInProgress(k)">
+                                <i class="fa fa-trash classColorWhite" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div fxFlex.xs="100" fxFlex.sm="50" fxFlex="25" class="classBorder" disabled>
+            <p id="idDone" class="classAlign">Done {{valDone}}
+                <i class="fa fa-gear" style="margin-left:63%;" aria-hidden="true" (click)="fnChangeStyle3()"></i>
+            </p>
+            <div class="classMinHeight" cdkDropList (cdkDropListDropped)="fnDone($event)" #idDone="cdkDropList"
+                [cdkDropListData]="arrayDone" [cdkDropListConnectedTo]="[]">
+                <div *ngFor="let i of arrayDone; let k = index;" style="border:1px solid black; border-radius: 0.5rem;
+                  margin:0.5rem;  background-color:rgb(243, 231, 211);  border-left:5px solid rgb(12, 163, 12);" class="classHover" cdkDrag
+                    id="idDivTask_{{k}}">
+                    <p style="text-align: center; padding-top:0.5rem;">{{i.taskName}}
+                    </p>
+                    <div fxLayout="row" fxLayoutAlign="space-around center">
+                        <span class="badge bg-success" data-title="task deadline">{{i.taskDeadline |
+                            date:'longDate'}}</span>
+                        <span class="badge bg-danger" data-title="task importance">{{i.taskImportance}}</span>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-around center" class="classPAdding03">
+                        <span class="badge bg-success" data-title="creation date">{{i.taskDate | date: 'mediumDate'}}
+                            {{i.taskTime}}</span>
+                        <span class="badge bg-info classMarginLeft1Rem" data-title="hours needed">{{i.taskHours}}
+                            hour(s)</span>
+                    </div>
+                    <div style="text-align: left; margin-top:-0.2rem; margin-left:1rem; margin-bottom:1rem;
+                    text-align: center;">
+                        <div fxFlex="50">
+                            <span data-title="responsible person" class="badge bg-warning text-dark">
+                                {{i.taskPerson | pipeNameTaskComponent}}
+                            </span>
+                        </div>
+                        <div id="idDivUnlock_{{k}}" style="text-align: right; margin-right:1rem;" fxFlex="50">
+                            <span style="margin-right:0.5rem;" class="badge bg-secondary text-dark"
+                                data-title="arhivate">
+                                <i class="fa fa-unlock classColorWhite" aria-hidden="true" (click)="fnArhivate(k)"></i>
+                            </span>
+                            <span class="badge bg-secondary text-dark classCursor" data-title="delete"
+                                (click)="fnDeleteDone(k)">
+                                <i class="fa fa-trash classColorWhite" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <div id="idDivLock_{{k}}" style="text-align: right; margin-right:1rem; display:none"
+                            fxFlex="50">
+                            <span style="margin-right:0.5rem;" class="badge bg-secondary text-dark"
+                                data-title="arhivated">
+                                <i class="fa fa-lock classColorWhite" aria-hidden="true"></i>
+                            </span>
+                            <span class="badge bg-secondary text-dark classCursor" data-title="delete" disabled>
+                                <i class="fa fa-trash classColorWhite" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p style="text-align: right;"><span style="cursor: pointer;" (click)="fnCloseModal()">
+                    <i class="fa fa-close"></i></span></p>
+            <input id="idNewPerson" type="text" class="form-control" placeholder="Add new person"
+                [(ngModel)]="valInputNewPerson">
+            <button id="idButtonAddPerson" type="button" class="btn btn-dark mt-3 mb-1" (click)="fnAddNewPerson()">
+                <i class="fa fa-user-plus"></i> Add person</button>
+            <span class="mt-3 mb-2"><b>Responsible person</b></span>
+            <div style="height:150px; overflow: auto;">
+                <p *ngFor="let i of arrayPersons; let k = index;" style="background-color: white; 
+            padding:0.3rem; margin:0.3rem; border-radius: 0.3rem;"><i class="fa fa-trash" style="margin-right: 1rem;"
+                        aria-hidden="true" (click)="fnDeletePerson(k)"></i>{{i | titlecase}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="myModal1" class="modal1">
+        <div class="modal-content1">
+            <div class="input-group">
+                <label id="idInputColor" class="classStyleLabels">Color: </label>
+                <input id="idInputColor" type="color" class="form-control" [(ngModel)]="valColor1"
+                    (input)="fnColorNotPlanned()">
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Style: </label>
+                <button type="button" class="btn btn-light" (click)="fnB()">B</button>
+                <button type="button" class="btn btn-light classTextDecoration" (click)="fnU()">U</button>
+                <button type="button" class="btn btn-light" (click)="fnI()"><i>I</i></button>
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Font-size: </label>
+                <button type="button" class="btn btn-light"><input type="number" min="10" max="18" 
+                    class="classWidth4Rem" [(ngModel)]="valInputFontSize" (input)="fnFontSizeNotPlanned()"></button>
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Font-family: </label>
+                <select class="form-select" aria-label="Default select example" (change)="fnChangeFontNotPlanned()"
+                    [(ngModel)]="valSelectNotPlanned">
+                    <option *ngFor="let i of arrayFontFamily" value="{{i}}">{{i}}</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-dark classButtonsCancelClose"
+                (click)="fnCloseModalStyle()">
+                <i class="fa fa-times" aria-hidden="true"></i> Close</button>
+        </div>
+    </div>
+    <div id="myModal2" class="modal2">
+        <div class="modal-content2">
+            <div class="input-group">
+                <label id="idInputColor" class="classStyleLabels">Choose color: </label>
+                <input id="idInputColor" type="color" class="form-control" [(ngModel)]="valColor2"
+                    (input)="fnColorToBeDone()">
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Choose style: </label>
+                <button type="button" class="btn btn-light" (click)="fnB1()">B</button>
+                <button type="button" class="btn btn-light classTextDecoration" (click)="fnU1()">U</button>
+                <button type="button" class="btn btn-light" (click)="fnI1()"><i>I</i></button>
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Choose font-size: </label>
+                <button type="button" class="btn btn-light"><input type="number" min="10" max="19" class="classWidth4Rem"
+                        [(ngModel)]="valInputFontSize1" (input)="fnFontSizeToBeDone()"></button>
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Font-family: </label>
+                <select class="form-select" aria-label="Default select example" (change)="fnChangeFontFamilyToBeDone()"
+                    [(ngModel)]="valSelectToBeDone">
+                    <option *ngFor="let i of arrayFontFamily" value="{{i}}">{{i}}</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-dark classButtonsCancelClose"
+                (click)="fnCloseModalStyle1()">
+                <i class="fa fa-times" aria-hidden="true"></i> Close</button>
+        </div>
+    </div>
+    <div id="myModal3" class="modal3">
+        <div class="modal-content3">
+            <div class="input-group">
+                <label id="idInputColor" class="classStyleLabels">Choose color: </label>
+                <input id="idInputColor" type="color" class="form-control" [(ngModel)]="valColor3"
+                    (input)="fnColorInProgress()">
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Choose style: </label>
+                <button type="button" class="btn btn-light" (click)="fnB2()">B</button>
+                <button type="button" class="btn btn-light classTextDecoration" (click)="fnU2()">U</button>
+                <button type="button" class="btn btn-light" (click)="fnI2()"><i>I</i></button>
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Choose font-size: </label>
+                <button type="button" class="btn btn-light"><input type="number" min="10" max="18"
+                    class="classWidth4Rem" [(ngModel)]="valInputFontSize2" (input)="fnFontSizeInProgress()"></button>
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Font-family: </label>
+                <select class="form-select" aria-label="Default select example" (change)="fnChangeInProgress()"
+                    [(ngModel)]="valSelectInProgress">
+                    <option *ngFor="let i of arrayFontFamily" value="{{i}}">{{i}}</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-dark classButtonsCancelClose"
+                (click)="fnCloseModalStyle2()">
+                <i class="fa fa-times" aria-hidden="true"></i> Close</button>
+        </div>
+    </div>
+    <div id="myModal4" class="modal4">
+        <div class="modal-content4">
+            <div class="input-group">
+                <label id="idInputColor" class="classStyleLabels">Choose color: </label>
+                <input id="idInputColor" type="color" class="form-control" [(ngModel)]="valColor4"
+                    (input)="fnColorDone()">
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Choose style: </label>
+                <button type="button" class="btn btn-light" (click)="fnB3()">B</button>
+                <button type="button" class="btn btn-light classTextDecoration" (click)="fnU3()">U</button>
+                <button type="button" class="btn btn-light" (click)="fnI3()"><i>I</i></button>
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Choose font-size: </label>
+                <button type="button" class="btn btn-light"><input type="number" min="10" max="18" 
+                    class="classWidth4Rem" [(ngModel)]="valInputFontSize3" (input)="fnFontSizeDone()"></button>
+            </div>
+            <hr>
+            <div class="input-group">
+                <label class="classStyleLabels">Font-family: </label>
+                <select class="form-select" aria-label="Default select example" (change)="fnChangeFontFamilyDone()"
+                    [(ngModel)]="valSelectDone">
+                    <option *ngFor="let i of arrayFontFamily" value="{{i}}">{{i}}</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-dark classButtonsCancelClose"
+                (click)="fnCloseModalStyle3()">
+                <i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+        </div>
+    </div>
+    <div id="modalInfo" class="modal5">
+        <div class="modal-content5">
+            <div id="idDivTaskModel">
+                <p style="text-align: center; margin-top:1rem;">
+                    <span data-title="task name" style="padding-bottom:0.4rem;">Shopping</span>
+                </p>
+                <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <span class="badge bg-success" data-title="task deadline">January 01, 2021</span>
+                    <span class="badge bg-danger" data-title="task importance">Middle</span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-around center" style="padding: 1rem;">
+                    <span class="badge bg-success" data-title="creation date">March 30, 2021 20:00</span>
+                    <span class="badge bg-info classMarginLeft1Rem" data-title="hours needed">2 hour(s)</span>
+                </div>
+                <div style="text-align: left; margin-top:-0.2rem; margin-left:1rem; margin-bottom:1rem;
+                    text-align: center;">
+                    <div fxFlex="50">
+                        <span data-title="responsible person" class="badge bg-warning text-dark">
+                            Popescu Ion
+                        </span>
+                    </div>
+                    <div style="text-align: right; margin-right:2rem;" fxFlex="50">
+                        <span class="badge bg-secondary text-dark classCursor">
+                            <i class="fa fa-unlock classColorWhite" aria-hidden="true"></i>
+                        </span> / <span class="badge bg-secondary text-dark classCursor">
+                            <i class="fa fa-lock classColorWhite" aria-hidden="true"></i>
+                        </span>
+                        <span class="badge bg-secondary text-dark" style="margin-left: 1rem;" data-title="delete">
+                            <i class="fa fa-trash classColorWhite" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <table style="border:1px solid black;">
+                    <tr>
+                        <td class="classPadding05">Shopping</td>
+                        <td>
+                            <p class="classPExplanations">- Represents the name, given by the user, for the task</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="classPadding05"><span class="badge bg-success">January 01, 2021</span></td>
+                        <td>
+                            <p style="text-align: left; padding: 0.5rem;margin-left:1rem;
+                            ">- Represents the deadline until the task must be completed</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="classPadding05"><span class="badge bg-danger">Middle</span></td>
+                        <td>
+                            <p class="classPExplanations">- Represents the importance of the task</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="classPadding05"> <span class="badge bg-success">March 30, 2021 20:00</span></td>
+                        <td>
+                            <p class="classPExplanations">- Represents the date when the task was created</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="classPadding05"> <span class="badge bg-info">2 hour(s)</span></td>
+                        <td>
+                            <p class="classPExplanations">- Represents the hours estimated as necessary for the performance of the task
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="classPadding05"><span class="badge bg-warning text-dark">Popescu Ion</span></td>
+                        <td>
+                            <p class="classPExplanations">- Represents the person who is responbile for the task</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="classPadding05"><span style="margin-right:0.5rem;"
+                                class="badge bg-secondary text-dark">
+
+                                <i class="fa fa-trash classColorWhite" aria-hidden="true"></i>
+                            </span>
+                        </td>
+                        <td>
+                            <p class="classDeleteAndArchive">- Delete task</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="classPadding05"><span class="badge bg-secondary text-dark classCursor">
+                                <i class="fa fa-unlock classColorWhite" aria-hidden="true"></i>
+                            </span> / <span class="badge bg-secondary text-dark classCursor">
+                                <i class="fa fa-lock classColorWhite" aria-hidden="true"></i>
+                            </span></td>
+                        <td>
+                            <p class="classDeleteAndArchive">- Archive task</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="btn btn-dark classButtonsCancelClose"
+                (click)="fnCloseModalInfo()">
+                <i class="fa fa-times" aria-hidden="true"></i> Close</button>
+        </div>
+    </div>
+    <div id="modalTask" class="modal5">
+        <div class="modal-content5">
+            <div>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                            type="button" role="tab" aria-controls="home" aria-selected="true">Task </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                            type="button" role="tab" aria-controls="profile" aria-selected="false">Comments</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="input-group mb-3">
+                            <label class="form-label classLabels">Name: </label>
+                            <input type="text" class="form-control classWidth100" [(ngModel)]="valInputTaskName">
+                        </div>
+                        <label class="form-label classLabels">Description: </label>
+                        <textarea type="text" class="form-control mt-2 classWidth100"
+                            [(ngModel)]="valTaskDescription"></textarea>
+                        <div class="input-group mb-3 mt-3">
+                            <label class="form-label classLabels">Deadline: </label>
+                            <input type="date" class="form-control classWidth100" [(ngModel)]="valInputDeadline">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="form-label classLabels">Importance: </label>
+                            <select class="form-select" [(ngModel)]="valInputImportance">
+                                <option value="High">High</option>
+                                <option value="Middle">Middle</option>
+                                <option value="Lower">Lower</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="form-label classLabels">Estimated hours: </label>
+                            <input type="number" max="100" min="1" class="form-control classWidth100"
+                                [(ngModel)]="valInputHours">
+                        </div>
+                        <div class="input-group mb-3">
+                            <label class="form-label classLabels">Responsible person: </label>
+                            <input type="text" class="form-control classWidth100"
+                                [(ngModel)]="valInputResponsiblePerson">
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="space-around center">
+                            <button type="button" class="btn btn-dark" fxFlex="30"
+                                (click)="fnUpdateWindowNotPlanned()">
+                                <i class="fa fa-pencil" aria-hidden="true"></i> Update</button>
+                            <button type="button" class="btn btn-dark" fxFlex="30"
+                                (click)="fnCloseWindowNotPlanned()">
+                                <i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div>
+                            <p id="idParagraphComments" *ngFor="let i of arrayComments">{{i.valComment}}</p>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control mt-2" placeholder="Leave a comment here" id="floatingTextarea"
+                                style="height:10rem;" [(ngModel)]="valTextareaComments"></textarea>
+                            <label for="floatingTextarea">Comments</label>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="space-around center" class="mt-3">
+                            <button type="button" class="btn btn-dark" fxFlex="35" fxFlex.xs="45"
+                            fxFlex.sm="40" (click)="fnAddComment()">
+                                <i class="fa fa-comment" aria-hidden="true"></i> Add comment</button>
+                            <button type="button" class="btn btn-dark" fxFlex="30"
+                                (click)="fnCloseWindowNotPlanned()">
+                                <i class="fa fa-times" aria-hidden="true"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

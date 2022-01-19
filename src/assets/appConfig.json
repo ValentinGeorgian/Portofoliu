@@ -1,0 +1,84 @@
+{
+    "element":
+    [
+        {
+            "text":"Product App",
+            "color":"orange",
+            "visivility":false,
+            "description":"App to simulate the activity in an online store.",
+            "description1":"Aplicatie ce simuleaza activitatea intr-un magazin online.",
+            "classIcon":"fa fa-shopping-cart fa-4x",
+            "path":"/productsComponent"
+        },
+        {
+            "text":"Tasks",
+            "color":"orange",
+            "visivility":false,
+            "description":"App to simulate some of the basic activities of Jira Software.",
+            "description1":"Aplicatie care simuleaza o parte din activitatile de baza ale aplicatiei Jira.",
+            "classIcon":"fa fa-tasks fa-4x",
+            "path":"/tasksComponent"
+        },
+        {
+            "text":"Table",
+            "color":"orange",
+            "visivility":false,
+            "description":"App for filtering, adding, modifying and deleting data.",
+            "description1":"Aplicație pentru filtrarea, adăugarea, modificarea și ștergerea datelor.",
+            "classIcon":"fa fa-table fa-4x",
+            "path":"/tableComponent"
+        },
+        {
+            "text":"Let`s play",
+            "color":"orange",
+            "visivility":false,
+            "description":"Entertaiment area represented by two games: X & 0 and Number Puzzle.",
+            "description1":"Zona de amuzament reprezentata prin doua jocuri: X & 0 si Puzzle numeric.",
+            "classIcon":"fa fa-gamepad fa-4x",
+            "path":"/gameComponent"
+        },
+        {
+            "text":"LogIn App",
+            "color":"red",
+            "visivility":false,
+            "description":"App for users, authentification and registration.",
+            "description1":"Aplicație pentru autentificare și înregistrarea utilizatorilor pregătiți pentru autentificare.",
+            "classIcon":"fa fa-user fa-4x",
+            "path":"/logInFormComponent"
+        },
+        {
+            "text":"Priority App",
+            "color":"green",
+            "visivility":false,
+            "description":"App to create lists sets where you can enter a person's daily activities by importance.",
+            "description1":"Aplicație pentru a crea seturi de liste în care puteți introduce activitățile zilnice ale unei persoane după importanță.",
+            "classIcon":"fa fa-star fa-4x",
+            "path":"/priorityComponent"
+        },
+        {
+            "text":"ToDo App",
+            "color":"orange",
+            "visivility":false,
+            "description":"App to create tasks lists that can be marked as fulfilled or deleted.",
+            "description1":"Aplicatie in care se poate crea o lista de sarcini, ce urmeaza a fi marcate ca indeplinite sau sterse.",
+            "classIcon":"fa fa-list fa-4x",
+            "path":"/toDoComponent"
+        },
+        {
+            "text":"Timer App",
+            "color":"black",
+            "visivility":true,
+            "description":"App that simulates a digital timer.",
+            "description1":"Aplicație care simulează un cronometru digital",
+            "classIcon":"fa fa-clock-o fa-4x",
+            "path":"/timerComponent"
+        }
+    ],
+    "height":"150px",
+    "width":"200px",
+    "align_buttons":"center",
+    "colorHrefButtons":"black",
+    "text_decoration":"none",
+    "padding":"15px",
+    "pathSettings":"/settingsComponent"
+}

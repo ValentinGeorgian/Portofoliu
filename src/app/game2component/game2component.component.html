@@ -1,0 +1,133 @@
+<div id="idAroundAllDivs">
+    <div id="idDivButtonBack">
+        <button id="idButtonBack" type="button" class="btn btn-dark" routerLink="/gameComponent">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+    </div>
+    <hr style="margin:0;">
+    <div class="classFlexRow">
+        <div id="idDivMenu">
+            <div class="classFlexColumn1 classMarginsTop">
+                <div class="classFlexRow1 classContent">
+                    <button id="idButtonPlay" type="button" class="btn btn-light classSmallBUttons"
+                        [ngClass]="classButton" (click)="fnPlay()"><b>Play</b></button>
+                    <button id="idButtonReset" type="button" class="btn btn-light classSmallBUttons"
+                        (click)="fnReset()"><b>Shuffle </b><i class="fa fa-random" aria-hidden="true"></i></button>
+                </div>
+                <div class="classFlexRow1 classContent">
+                    <button type="button" class="btn btn-dark classSmallBUttons" disabled>
+                        <b>MOVES: {{valMoves}}</b></button>
+                    <button type="button" class="btn btn-dark classSmallBUttons" disabled><b>
+                            <span>TIME: </span>
+                            <span>{{valSpan1}}</span>
+                            <span> : </span>
+                            <span>{{valSpan}} </span></b>
+                            <span><i class="fa fa-hourglass-start" aria-hidden="true"></i></span>
+                    </button>
+                </div>
+                <input type="text" id="idInputAddName" class="form-control classMarginsTop" [(ngModel)]="valInputAdd"
+                   placeholder="Add your name" (input)="fnInputAddName()">
+                <div id="idDivTable">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Player</th>
+                                <th scope="col">Moves</th>
+                                <th scope="col">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of arrayUser" class="classTableHOver">
+                                <td>{{i.user}}</td>
+                                <td>{{i.moves}}</td>
+                                <td>{{i.time}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="idMainDiv">
+            <div id="idDivsAll">
+                <div class="classFlexRow1">
+                    <div class="classWidth16Buttons">
+                        <button id="idButton1" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick1()">1</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton2" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick2()">2</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton3" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick3()">3</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton4" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick4()">4</button>
+                    </div>
+                </div>
+                <div class="classFlexRow1 classMargins">
+                    <div class="classWidth16Buttons">
+                        <button id="idButton5" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick5()">5</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton6" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick6()">6</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton7" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick7()">7</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton8" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick8()">8</button>
+                    </div>
+                </div>
+                <div class="classFlexRow1 classMargins">
+                    <div class="classWidth16Buttons">
+                        <button id="idButton9" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick9()">9</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton10" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick10()">10</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton11" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick11()">11</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton12" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick12()">12</button>
+                    </div>
+                </div>
+                <div class="classFlexRow1 classMargins">
+                    <div class="classWidth16Buttons">
+                        <button id="idButton13" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick13()">13</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton14" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick14()">14</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton15" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick15()">15</button>
+                    </div>
+                    <div class="classWidth16Buttons">
+                        <button id="idButton16" type="button" disabled class="btn btn-success class16Buttons"
+                            (click)="fnClick16()"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal" >
+        <div class="modal-content">
+            <p style="text-align: center;">Add your name!</p>
+        </div>
+
+    </div>
+</div>

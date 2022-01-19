@@ -1,0 +1,45 @@
+<div id="idMainDiv">
+    <h2 id="idTitle">TO - DO LIST</h2>
+    <div id="idDivInputTask">
+        <input id="idInputTask" type="text" class="form-control" placeholder="Add your task" [(ngModel)]="valInputTask"
+            (blur)="fnBlurInputTask()" (focus)="fnFocusInputTask()"
+            (input)="fnInputTask()">
+        <div id="idDivSpanInterpolation"><span>{{spanInterpolationTask}}</span></div>
+    </div>
+    <div id="idDivInterpolationMessage">
+        <span id="idSpanInterpolationMessage"><b>{{spanInterpolationMessage}}</b></span>
+    </div>
+    <div class="classFlexButtons">
+        <div>
+            <button type="button" class="btn btn-dark classWidthButtons classButtons" 
+            (click)="fnAddTask()"><i class="fa fa-plus classIcons" aria-hidden="true"></i>Add Task</button>
+        </div>
+        <div>
+            <button type="button" class="btn btn-dark classWidthButtons classButtons" 
+            (click)="fnDeleteList()"><i class="fa fa-times classIcons" aria-hidden="true"></i>Delete list</button>
+        </div>
+    </div>
+    <div>
+        <button id="idButtonBack" type="button" class="btn btn-dark classButtons" 
+        routerLink="/mainComponent"><i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        Back</button>
+    </div>
+    <div id="idDivLi">
+        <ul id="idUl" cdkDropList (cdkDropListDropped)="fnDrop($event)">
+            <li *ngFor="let i of arrayDateList; let k = index" id="idLiNgFor" class="classBackgroundList"
+            cdkDrag>
+                <div id="idDivFlexLi">
+                    <span id="idSpanLi">{{fnMetUpperCase(i)}}</span>
+                    <button type="button" class="btn btn-dark classButtonsLi" 
+                    (click)="fnDeleteTask(k)"><i
+                            class="fa fa-trash" aria-hidden="true"></i></button>
+                    <button type="button" id="idButtonChecked_{{k}}" class="btn btn-dark classButtonsLi"
+                        (click)="fnMarkTask(k)">
+                        <span id="idSpanCheck_{{k}}" class="fa fa-square-o"
+                            aria-hidden="true"></span>
+                        </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

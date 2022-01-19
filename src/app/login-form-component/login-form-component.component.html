@@ -1,0 +1,51 @@
+<div id="idMainDiv" class="classColorBackground">
+    <h2 id="idTitle">LOGIN FORM</h2>
+    <div class="classWidthInputuri">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-user classWidthI" aria-hidden="true" [ngClass]="classColor1"></i>
+            </span>
+            <input id="idEmailorPhone" type="text" class="form-control" placeholder="Email or username"
+                [(ngModel)]="valEmailorUsername" (blur)="fnBlurEmailorUsername()" (focus)="fnFocusEmailorUsername()"
+                (input)="fnInputEmailorUsername()">
+        </div>
+        <span class="classInterpolation"><b>{{interpolationEmailorUsername}}</b></span>
+    </div>
+    <div class="classWidthInputuri">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-key classWidthI" aria-hidden="true" [ngClass]="classColor2"></i>
+            </span>
+            <input id="idPassword" type="password" class="form-control" placeholder="Password" [(ngModel)]="valPassword"
+                (blur)="fnBlurPassword()" (focus)="fnFocusPassword()" (input)="fnInputPassword()">
+        </div>
+        <span class="classInterpolation"><b>{{interpolationPassword}}</b></span>
+    </div>
+    <div class="classWidthInputuri">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-book classWidthI" aria-hidden="true"></i>
+            </span>
+            <select class="form-select" aria-label="Default select example">
+                <option selected hidden disabled value="222">Select language</option>
+                <option *ngFor="let i of arrayLanguages" value={{i.languageId}}>{{i.language}}</option>
+            </select>
+        </div>
+    </div>
+    <div id="idDivButton" class="classFlex">
+        <button id="idButton" type="button" class="btn btn-dark" (click)="fnBack()">
+            <i class="fa fa-hand-o-left" aria-hidden="true"></i> Back</button>
+        <button id="idButton" type="button" class="btn btn-dark" (click)="fnLogin()">
+            <i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
+    </div>
+    <h5 id="idNotaMember">Not a member? <a routerLink="/registerFormComponent" id="idSignUp">Sign up now</a></h5>
+</div>
+<div id="finalMessage" class="modal">
+    <div class="modal-content1">
+        <span id="idSpanMessage">Username, email or password doesn`t exists! You have to register!</span>
+        <div id="idDivButtonGoRegister">
+            <button type="button" id="idButtonRegister" class="btn btn-dark"
+            (click)="fnGoRegister()">Go to register</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div id="idDivPuzzle">
+</div>
+<div id="idMainDiv">
+    <p id="idPWelcome">WELCOME TO MY PAGE</p>
+    <div id="idDivDate">
+        <div id="idFlexDivDate">
+            <p id="idPDate"><b>
+                    {{valCurrentDate | date: 'dd MMM YYYY HH:mm:ss'}}</b></p>
+            <!--<a routerLink={{pathSettingsComponent}} id="idHref">
+                <i class="fa fa-cog fa-2x colorBlack" aria-hidden="true"></i></a>-->
+        </div>
+    </div>
+    <div id="idDivAllDivs">
+        <div id="idFlex">
+            <div *ngFor="let i of arrayAppConfig" class="classDivNgFor">
+                <div [style.text-align]="alignTextFromJson">
+                    <button routerLink={{i.path}} 
+                     [style.width]="widthButtonFromJson" [style.height]="heightButtonFromJson" type="button"
+                        class="btn classButtons">
+                        <div>
+                            <i class={{i.classIcon}} aria-hidden="true" class="classIconHover"></i>
+                        </div>
+                        <a [style.color]="colorHrefButtonsFromJson"
+                            [style.text-decoration]="textDecorationFromJson"><b>
+                                {{i.text}}</b>
+                        </a>
+                    </button>
+                </div>
+                <p [style.text-align]="alignTextFromJson" [style.padding]="paddingAllFromJson"><b>
+                        {{i.description}}</b></p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="idDivFooter">
+        <div id="idDivFooter1">
+            <h6 id="idMessageFooter">
+                <b>Success means liking yourself, liking what you do and how you do it. Maya Angelou</b>
+            </h6>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+{
+    "delivery":
+    {
+        "title": "Delivery options",
+        "class": "fa fa-truck fa-lg",
+        "options": [
+            {
+                "deliveryOption": "easyBox",
+                "class": "fa fa-building",
+                "price":"5 lei",
+                "status":false
+            },
+            {
+                "deliveryOption": "standard Delivery",
+                "class": "fa fa-truck",
+                "price":"10 lei",
+                "status":true
+            },
+            {
+                "deliveryOption": "postal Offices",
+                "class": "fa fa-home",
+                "price":"0 lei",
+                "status":false
+            }
+        ]
+    },
+    "address":
+    {
+        "title":"Billing address",
+        "class": "fa fa-file-text fa-lg",
+        "options":[
+            {
+                "billingAddress":"Identical to the delivery address.",
+                "status":true
+            },
+            {
+                "billingAddress":"Billing address is different.",
+                "status":false
+            }
+        ]
+    },
+    "payment":
+    {
+        "title":"Payment method",
+        "class":"fa fa-credit-card-alt fa-lg",
+        "cardTypes":"https://fdcdn.akamaized.net/b/465Q-736x104.png",
+        "options":
+        [
+            {
+                "paymentType":"Payment online with the card ",
+                "status":false
+            },
+            {
+                "paymentType":"Payment on delivery",
+                "status":true
+            }
+        ]
+    }
+    ,
+    "sumaryOrder":
+    {
+        "title":"Summary order",
+        "class":"fa fa-list fa-lg"
+    }
+}
