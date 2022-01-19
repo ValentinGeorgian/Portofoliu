@@ -1,0 +1,17 @@
+{
+    "chooseLanguage":
+    [
+        {
+            "language":"Romanian",
+            "languageId":1
+        },
+        {
+            "language":"English",
+            "languageId":2
+        },
+        {
+            "language":"Spanish",
+            "languageId":3
+        }
+    ]
+}

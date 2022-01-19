@@ -1,0 +1,516 @@
+#idButtonBack
+{
+    width:15%; 
+    margin-left:2rem;
+}
+
+.class16Buttons
+{
+    font-size: 3rem;
+    border-radius: 1rem;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+
+#idMainDiv
+{
+    width:50%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-image: url("../../assets/Images/z.jpg");
+    border-radius: 1rem;
+}
+
+#idDivsAll
+{
+    width:70%; 
+    margin-left:auto; 
+    margin-right: auto; 
+    padding-top:2.4rem; 
+    padding-bottom:2.4rem;
+}
+
+.classSmallBUttons
+{
+    margin-top:1rem;
+    height:3rem;
+    width:15rem;
+}
+
+#idAroundAllDivs
+{
+    background-color: rgb(197, 191, 191); 
+    padding-bottom:2rem;
+    height:100vh;
+}
+
+.classFlexRow
+{
+    display: flex; 
+    flex-direction: row;
+}
+
+.classFlexRow1
+{
+    display: flex; 
+    flex-direction: row;
+}
+
+.classFlexColumn
+{
+    display: flex; 
+    flex-direction: column;
+}
+
+#idDivTable
+{
+    width:20rem; 
+    height:10rem; 
+    overflow:auto;
+}
+
+#idDivMenu
+{
+    width:30%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom:1rem;
+}
+
+.classMarginsTop
+{
+    margin-top:3rem;
+}
+
+.classContent
+{
+    justify-content: space-between;
+}
+
+.classTableHOver:hover
+{
+    background-color: white;
+}
+
+#idInputAddName
+{
+    width:20rem;
+}
+
+#idDivInterpolation
+{
+    width: 80%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center; 
+    margin-top:1rem;
+}
+
+.classWidth16Buttons
+{
+    width:24%;
+    margin:0.2rem;
+}
+
+#idButton1, #idButton2, #idButton3, #idButton4,#idButton5, #idButton6, #idButton7, #idButton8,
+#idButton9, #idButton10, #idButton11, #idButton12, #idButton13, #idButton14, #idButton15, #idButton16
+{
+    width:100%; 
+    height:6.6rem;
+    font-family: cursive;
+}
+
+#idSpanInterpolation
+{
+    font-size: 1.5rem; 
+    color:red; 
+    font-family: 'Trebuchet MS';
+
+}
+
+#myModal
+{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content
+{
+    background-color: #fefefe; 
+    margin: auto; 
+    padding: 2rem;
+    border: 1px solid black; 
+    color: black; 
+    font-size: 1.5rem; 
+    text-align: center;
+    font-family: 'Trebuchet MS'; 
+    width:40%; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 767px) 
+{
+    #idDivButtonBack
+    {
+        padding-top: 0.2rem;
+        margin-bottom:0.2rem;
+    }
+
+    .classFlexRow
+    {
+        display: flex; 
+        flex-direction: column;
+    }
+    
+    #idDivsAll
+    {
+        width:80%; 
+        padding-top:0.1rem;
+        padding-bottom:0.1rem;
+    }
+
+    #idDivMenu
+    {
+        width:100%; 
+        margin-bottom:0rem;
+    }
+
+    #idMainDiv
+    {
+        width:80%; 
+        padding-top:0.2rem;
+        padding-bottom:0.2rem;
+        margin-bottom:0.1rem;
+    }
+
+    #idDivTable
+    {
+        margin-left: auto;
+        margin-right:auto;
+        height:3rem;
+        margin-bottom: 1rem;
+        margin-top:1rem;
+    }
+
+    #idInputAddName
+    {
+        margin-left: auto;
+        margin-right:auto;
+        height:2rem;
+    }
+
+    .classSmallBUttons
+    {
+        margin-left:1rem;
+        margin-right:1rem;
+        margin-top:0.5rem;
+        font-size: 0.8rem;
+        height:2rem;
+        text-align: center;
+    }
+
+    #idButtonBack
+    {
+        width:10rem;
+        font-size: 0.8rem;
+        height:2rem;
+    }
+
+    .classMarginsTop
+    {
+        margin-top:0.5rem;
+    }
+
+    .classWidth16Buttons
+    {
+        margin:0.1rem;
+    }
+
+    .class16Buttons
+    {
+        height:5rem;
+    }
+
+    #idButton1, #idButton2, #idButton3, #idButton4,#idButton5, #idButton6, #idButton7, #idButton8,
+    #idButton9, #idButton10, #idButton11, #idButton12, #idButton13, #idButton14, #idButton15, #idButton16
+    {   
+        width:100%; 
+        height:4rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width:767px)
+{
+    .classFlexRow
+    {
+        display: flex; 
+        flex-direction: column;
+    } 
+
+    #idDivButtonBack
+    {
+        padding-top: 0.2rem;
+        margin-bottom:0.2rem;
+    }
+
+    .classFlexColumn
+    {
+        display: flex; 
+        flex-direction: row;
+    }
+
+    #idDivsAll
+    {
+        width:90%; 
+        padding-top:0.2rem;
+        padding-bottom:0.2rem;
+    }
+
+    #idDivMenu
+    {
+        width:100%; 
+        margin-bottom:0.2rem;
+    }
+
+    #idMainDiv
+    {
+        width:50%; 
+    }
+
+    #idButtonBack
+    {
+        width:10rem;
+        font-size: 0.8rem;
+        height:2rem;
+    } 
+
+    #idAroundAllDivs
+    {
+        padding-bottom:1.4rem;
+    }
+
+    .classContent
+    {
+        justify-content:space-around;
+    }
+
+    #idDivTable
+    {
+        margin-left: auto;
+        margin-right:auto;
+        height:5rem;
+    }
+
+    #idInputAddName
+    {
+        margin-left: auto;
+        margin-right:auto;
+    }
+
+    .classSmallBUttons
+    {
+        margin-top:0.3rem;
+        width:12rem;
+        height:2rem;
+        font-size: 0.8rem;
+    }
+
+    #idButtonBack
+    {
+        width:20%;
+    }
+
+    .classMarginsTop
+    {
+        margin-top:0.5rem;
+    }
+
+    #idButton1, #idButton2, #idButton3, #idButton4,#idButton5, #idButton6, #idButton7, #idButton8,
+    #idButton9, #idButton10, #idButton11, #idButton12, #idButton13, #idButton14, #idButton15, #idButton16
+    {   
+        height:4rem;
+        font-size: 2rem;
+    }
+
+    .classWidth16Buttons
+    {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:998px)
+{
+    #idDivButtonBack
+    {
+        padding-top: 1rem;
+        margin-bottom:1rem;
+    } 
+
+    .classFlexRow
+    {
+        display: flex; 
+        flex-direction: row;
+    }
+
+    .classFlexColumn
+    {
+        display: flex; 
+        flex-direction: column;
+    }
+
+    #idDivsAll
+    {
+        width:80%; 
+        padding-top:2rem;
+        padding-bottom: 2rem;
+    }
+
+    #idDivMenu
+    {
+        width:40%; 
+        margin-bottom:1rem;
+    }
+
+    #idMainDiv
+    {
+        width:50%; 
+        margin-top:2rem;
+    }
+
+    #idDivTable
+    {
+        height:8rem; 
+        overflow:auto;
+    }
+
+    #idInputAddName
+    {
+       width:20rem;
+    }
+
+    .classSmallBUttons
+    {
+        margin-top:1rem;
+        height:3rem;
+        width:12rem;
+        font-size: 1rem;
+    }
+
+    #idButtonBack
+    {
+        width:15%;
+        font-size: 1rem;
+        height:2.5rem;
+    }
+
+    .classMarginsTop
+    {
+        margin-top:3rem;
+    }
+
+    #idButton1, #idButton2, #idButton3, #idButton4,#idButton5, #idButton6, #idButton7, #idButton8,
+    #idButton9, #idButton10, #idButton11, #idButton12, #idButton13, #idButton14, #idButton15, #idButton16
+    {   
+        height:5rem;
+        font-size: 2.5rem;
+    }
+
+    #idAroundAllDivs
+    { 
+        padding-bottom:2.8rem;
+    }
+}
+
+@media screen and (min-width:1200px)
+{
+    .classFlexRow
+    {
+        display: flex; 
+        flex-direction: row;
+    }
+
+    .classFlexColumn
+    {
+        display: flex; 
+        flex-direction: column;
+    }
+
+    #idDivsAll
+    {
+        width:80%; 
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    #idDivMenu
+    {
+        width:30%; 
+        margin-bottom:1rem;
+    }
+
+    #idMainDiv
+    {
+        width:40%; 
+    }
+
+    #idDivTable
+    {
+        width:20rem; 
+        height:10rem; 
+        overflow:auto;
+    }
+
+    #idInputAddName
+    {
+       width:20rem;
+    }
+
+    .classSmallBUttons
+    {
+        margin-top:0.5rem;
+        height:2.5rem;
+        width:10rem;
+    }
+
+    #idButtonBack
+    {
+        width:15%; 
+        margin-left:2rem;
+    }
+
+    .classMargins
+    {
+        width:auto; 
+        margin-left:auto; 
+        margin-right:auto;
+    }
+
+    .classMarginsTop
+    {
+        margin-top:3rem;
+    }
+
+    #idButton1, #idButton2, #idButton3, #idButton4,#idButton5, #idButton6, #idButton7, #idButton8,
+    #idButton9, #idButton10, #idButton11, #idButton12, #idButton13, #idButton14, #idButton15, #idButton16
+    {   
+        height:5.8rem;
+        font-size: 2.8rem;
+    }
+
+    #idAroundAllDivs
+    { 
+        padding-bottom:2.7rem;
+    }
+}

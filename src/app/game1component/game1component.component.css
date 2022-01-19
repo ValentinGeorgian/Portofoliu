@@ -1,0 +1,389 @@
+#idDivButtonBack
+{
+    width:100%; 
+    height:auto; 
+    padding-top: 1rem;
+    margin-bottom:1rem;
+    z-index: 1;
+}
+
+#idButtonBack
+{
+    width:15%; 
+    margin-left:2rem;
+}
+
+#idAroundAllDivs
+{
+    background-color: rgb(197, 191, 191); 
+    height:100vh;
+}
+
+.classWidthDivsButtons
+{
+    width:30%;
+}
+
+.classBorderButtons
+{
+    border:1px solid black;
+}
+
+.classButtons
+{
+    width:100%;
+    height:8rem;
+    margin:0.2rem;
+    border-radius: 1rem;
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: cursive;
+}
+
+#idMainDivGame
+{
+    width:70%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-image: url("../../assets/Images/x.jpg");
+    padding-top:0.5rem; 
+    padding-bottom:0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+}
+
+.classDivFlex
+{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around; 
+    margin-top:1rem;
+    margin-right:2rem; 
+    margin-left:2rem; 
+    margin-bottom:0.5rem;
+}
+
+#idDivAll
+{
+    width:80%; 
+    margin-left:auto; 
+    margin-right:auto;
+    display: flex; 
+    flex-direction: row;
+}
+
+.classDivsButtonsMenu
+{
+    width:40%; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.classButtonsMenu
+{
+    width:98%; 
+    margin-top:2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#idDiv70
+{
+    width:70%;
+}
+
+#idDiv30
+{
+    width:30%;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+
+  .modal-content3 {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 1rem;
+    padding-bottom:3rem;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+    border-radius: 0.5rem;
+  }
+
+  #idSpanMessage
+  {
+     font-weight: 500;
+     text-indent: 2rem;
+  }
+
+  #idPMessage
+  {
+    text-align: right;
+  }
+
+@media screen and (max-width:599px) 
+{
+    .setWidthPh
+    {
+        width: 30%;
+    }
+
+    #idButtonBack
+    {
+        width:25%; 
+        font-size: 0.7rem;
+    }
+
+    #idDivButtonBack
+    { 
+        padding-top: 0.2rem;
+        margin-bottom:0.2rem;
+    }
+
+    #idAroundAllDivs
+    {
+        padding-bottom:3.6rem;
+    }
+    
+    #idDivAll
+    {
+        width:100%;
+        flex-direction: column;
+    }
+
+    #idMainDivGame
+    {
+        width:70%; 
+        margin-top:0.5rem;
+    }
+
+    .classButtons
+    {
+        width:100%;
+        height:5rem;
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    #idDiv70
+    {
+        width:100%;
+    }
+
+    #idDiv30
+    {
+        width:100%;
+        margin:0;
+    }
+
+    .classDivsButtonsMenu
+    {
+        margin-top:-1rem;
+        margin-bottom:-0.7rem;
+    }
+
+    .classFlexMobile
+    {
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-around;
+    }
+
+    .modal-content3 {
+        width: 70%;
+      }
+}
+
+@media screen and (min-width:599px) and (max-width:700px) 
+{
+    #idButtonBack
+    {
+        width:25%; 
+    }
+
+    #idDivButtonBack
+    { 
+        padding-top: 0.5rem;
+        margin-bottom:0.5rem;
+    }
+
+    #idAroundAllDivs
+    {
+        padding-bottom:1.1rem;
+    }
+    
+    #idDivAll
+    {
+        width:100%;
+        flex-direction: column;
+    }
+
+    #idMainDivGame
+    {
+        width:60%; 
+        margin-top:2rem;
+    }
+
+    .classButtons
+    {
+        width:100%;
+        height:5rem;
+        border-radius: 0.5rem;
+        font-size: 2rem;
+    }
+
+    #idDiv70
+    {
+        width:100%;
+    }
+
+    #idDiv30
+    {
+        width:100%;
+        margin:0;
+    }
+
+    .classDivsButtonsMenu
+    {
+        width:30%; 
+        margin-top:-1rem;
+        margin-bottom:-0.7rem;
+    }
+
+    .classFlexMobile
+    {
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width:700px) and (max-width:960px) 
+{
+    #idButtonBack
+    {
+        width:25%; 
+    }
+
+    #idDivButtonBack
+    { 
+        padding-top: 0.5rem;
+        margin-bottom:0.5rem;
+    }
+
+    #idAroundAllDivs
+    {
+        padding-bottom:1rem;
+    }
+    
+    #idDivAll
+    {
+        width:100%;
+        flex-direction: column;
+    }
+
+    #idMainDivGame
+    {
+        width:45%; 
+        margin-top:2rem;
+    }
+
+    .classButtons
+    {
+        width:100%;
+        height:5rem;
+        border-radius: 0.5rem;
+        font-size: 2.5rem;
+    }
+
+    #idDiv70
+    {
+        width:100%;
+    }
+
+    #idDiv30
+    {
+        width:100%;
+        margin:0;
+    }
+
+    .classDivsButtonsMenu
+    {
+        width:30%; 
+        margin-top:-1rem;
+        margin-bottom:-0.7rem;
+    }
+
+    .classFlexMobile
+    {
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width:960px) and (max-width:1279px) 
+{
+    #idButtonBack
+    {
+        width:15%; 
+    }
+
+    #idAroundAllDivs
+    {
+        padding-bottom:2.8rem;
+    }
+    
+    #idDivAll
+    {
+        width:80%;
+        flex-direction: row;
+    }
+
+    #idMainDivGame
+    {
+        width:70%; 
+        margin-top:2rem;
+    }
+
+    .classButtons
+    {
+        width:100%;
+        height:7rem;
+        border-radius: 1rem;
+        font-size: 3.5rem;
+    }
+
+    #idDiv70
+    {
+        width:70%;
+    }
+
+    #idDiv30
+    {
+        width:30%;
+        margin:0;
+    }
+
+    .classDivsButtonsMenu
+    {
+        width:80%; 
+        margin-top:0.5rem;
+    }
+
+    .classFlexMobile
+    {
+        flex-direction: column; 
+    }
+}

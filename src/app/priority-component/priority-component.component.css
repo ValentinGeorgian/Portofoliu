@@ -1,0 +1,240 @@
+#idTitle
+{
+    font-family: Helvetica;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom:50px;
+    padding-top:32px;
+}
+
+#idDivFull
+{
+    width:100%; 
+    height:100vh; 
+    background-color: rgb(197, 191, 191);
+    padding-bottom:50px;
+}
+
+.class60Percent
+{
+    width:60%; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.classDivInterpolation
+{
+    width:100%;
+    background-color:white;
+    border-bottom:1px solid red;
+    border-left:1px solid red;
+    border-right:1px solid red;
+    padding: 10px;
+    text-align: center;
+    color:red;
+    border-radius: .25rem;
+}
+
+.classDivButtons
+{
+    width:35%;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.ClassWidthButtons
+{
+    width:100%;
+}
+
+#idDivPriorities
+{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+}
+
+.classSmallDivsPriorities
+{
+    width:33%;
+    height:auto; 
+    border:2px solid black;
+    border-radius: .25rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.classPNamePriorities
+{
+    text-align: center; 
+    font-weight: 800;
+}
+
+.classButtonsClear
+{
+    margin:5px; 
+    text-align: right;
+}
+
+.classUlPriorities
+{
+    border:1px solid black; 
+    border-radius: .25rem;
+    margin:10px;
+    padding-left:0px;
+}
+
+#idP1
+{
+    color:rgb(0, 0, 0);
+    font-size:17px;
+}
+
+#idP2
+{
+    color:rgb(0, 0, 0);
+    font-size:17px;
+}
+
+#idP3
+{
+    color:rgb(0, 0, 0);
+    font-size:17px;
+}
+
+.classLiPriorities
+{
+   list-style-type: none; 
+   text-align: center;
+   margin-top:10px;
+   margin-bottom:10px;
+}
+
+.classSpanPriority
+{
+    word-break: break-all;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.classDivsSpanAndButton
+{
+    display: flex; 
+    justify-content: space-around;
+}
+
+.classFlexSimple
+{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.classWidth80
+{
+    width:80%;
+}
+
+.classWidth20
+{
+    width:20%;
+}
+
+.classCursor
+{
+    cursor: pointer;
+}
+
+@media screen and (max-width:767px)
+{
+    .class60Percent
+    {
+        width:95%; 
+    }
+
+    #idDivPriorities
+    {
+        display: flex; 
+        flex-direction: column; 
+    }
+
+    #idTitle
+    {
+        margin-bottom:20px;
+    }
+
+    .classSmallDivsPriorities
+    {
+        width:100%;
+        margin-top:20px;
+    }
+
+    .classDivButtons
+    {
+        width:48%;
+    }
+}
+
+@media screen and (min-width:768px)
+{
+    .class60Percent
+    {
+        width:75%; 
+    }
+
+    #idDivPriorities
+    {
+        display: flex; 
+        flex-direction: row; 
+    }
+
+    .classSmallDivsPriorities
+    {
+        width:100%;
+        margin-top:20px;
+    }
+
+    .classWidth80
+    {
+        width:70%;
+    }
+}
+
+@media screen and (min-width:992px)
+{
+    .class60Percent
+    {
+        width:70%; 
+    }
+
+    #idDivPriorities
+    {
+        display: flex; 
+        flex-direction: row; 
+    }
+
+    .classSmallDivsPriorities
+    {
+        width:33%;
+        margin-top:20px;
+    }
+}
+
+@media screen and (min-width:1200px)
+{
+    .class60Percent
+    {
+        width:65%; 
+    }
+
+    #idDivPriorities
+    {
+        display: flex; 
+        flex-direction: row; 
+        justify-content: space-around;
+    }
+
+    .classSmallDivsPriorities
+    {
+        width:33%;
+    }
+}

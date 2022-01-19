@@ -1,0 +1,566 @@
+{
+    "width_image": 0,
+    "height_image": 0,
+    "delivery_by": [
+        {
+            "id": 0,
+            "name":"Choose option",
+            "hidden":true
+        },
+        {
+            "id": 1,
+            "name": "Altex",
+            "hidden":false
+        },
+        {
+            "id": 2,
+            "name": "Emag",
+            "hidden":false
+        },
+        {
+            "id": 3,
+            "name": "Media Galaxy",
+            "hidden":false
+        },
+        {
+            "id": 4,
+            "name": "Flanco",
+            "hidden":false
+        },
+        {
+            "id": 5,
+            "name": "Other",
+            "hidden":false
+        }
+    ],
+    "stringFilters": [
+        {
+            "option":"Choose option",
+            "hidden":true
+        },
+        {
+            "option":"StartsWith",
+            "hidden":false
+        },
+        {
+            "option":"EndsWith",
+            "hidden":false
+        },
+        {
+            "option":"Includes",
+            "hidden":false
+        }
+    ],
+    "numberFilters": [
+        {
+            "option":"Choose option",
+            "hidden":true
+        },
+        {
+            "option":"<",
+            "hidden":false
+        },
+        {
+            "option":">",
+            "hidden":false
+        },
+        {
+            "option":"==",
+            "hidden":false
+        },
+        {
+            "option":"!=",
+            "hidden":false
+        },
+        {
+            "option":"<=",
+            "hidden":false
+        },
+        {
+            "option":">=",
+            "disabled":false
+        }
+    ],
+    "products": [
+        {
+            "product_id": 1,
+            "product_name": "Mobile Phone Samsung Galaxy A52s",
+            "product_price": 1799,
+            "product_colour": "Violet",
+            "delivered_by": 2,
+            "produced_by": "Samsung",
+            "category": "Phones",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/1.jpg"
+        },
+        {
+            "product_id": 2,
+            "product_name": "Mobile Phone Apple iPhone 13 Pro",
+            "product_price": 5699,
+            "product_colour": "Grey",
+            "delivered_by": 5,
+            "produced_by": "Apple",
+            "category": "Phones",
+            "is_visible": true,
+            "in_stock": true,
+             "path_image":"../../assets/imagesTable/2.jpg"
+        },
+        {
+            "product_id": 3,
+            "product_name": "Xiaomi 11 Lite New Edition",
+            "product_price": 1799,
+            "product_colour": "White",
+            "delivered_by": 2,
+            "produced_by": "Xiaomi",
+            "category": "Phones",
+            "is_visible": true,
+            "in_stock": false,
+            "path_image":"../../assets/imagesTable/3.jpg"
+        },
+        {
+            "product_id": 4,
+            "product_name": "Motorola G60s",
+            "product_price": 999,
+            "product_colour": "Blue",
+            "delivered_by": 2,
+            "produced_by": "Motorola",
+            "category": "Phones",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/4.jpg"
+        },
+        {
+            "product_id": 5,
+            "product_name": "Samsung Galaxy S21 Plus",
+            "product_price": 4039,
+            "product_colour": "Violet",
+            "delivered_by": 2,
+            "produced_by": "Samsung",
+            "category": "Phones",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/5.jpg"
+        },
+        {
+            "product_id": 6,
+            "product_name": "Laptop Dell Vostro 3500",
+            "product_price": 2199,
+            "product_colour": "Black",
+            "delivered_by": 2,
+            "produced_by": "Dell",
+            "category": "Notebooks",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/6.jpg"
+        },
+        {
+            "product_id": 7,
+            "product_name": "Laptop Huawei MateBook X Pro 2020",
+            "product_price": 5499,
+            "product_colour": "Grey",
+            "delivered_by": 2,
+            "produced_by": "Huawei",
+            "category": "Notebooks",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/7.jpg"
+        },
+        {
+            "product_id": 8,
+            "product_name": "Laptop Dell Latitude 3500",
+            "product_price": 3499,
+            "product_colour": "Black",
+            "delivered_by": 2,
+            "produced_by": "Dell",
+            "category": "Notebooks",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/8.jpg"
+        },
+        {
+            "product_id": 9,
+            "product_name": "Laptop Apple MacBook Pro 14 (2021)",
+            "product_price": 11769,
+            "product_colour": "Grey",
+            "delivered_by": 2,
+            "produced_by": "Apple",
+            "category": "Notebooks",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/9.jpg"
+        },
+        {
+            "product_id": 10,
+            "product_name": "Laptop APPLE MacBook Pro 13",
+            "product_price": 9240,
+            "product_colour": "Silver",
+            "delivered_by": 1,
+            "produced_by": "Apple",
+            "category": "Notebooks",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/10.jpg"
+        },
+        {
+            "product_id": 11,
+            "product_name": "Laptop LENOVO IdeaPad 3 15IML05",
+            "product_price": 1499,
+            "product_colour": "Grey",
+            "delivered_by": 1,
+            "produced_by": "Lenovo",
+            "category": "Notebooks",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/11.jpg"
+        },
+        {
+            "product_id": 12,
+            "product_name": "Laptop APPLE MacBook Air 13",
+            "product_price": 4850,
+            "product_colour": "Grey",
+            "delivered_by": 1,
+            "produced_by": "Apple",
+            "category": "Notebooks",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/12.jpg"
+        },
+        {
+            "product_id": 13,
+            "product_name": "SAMSUNG Galaxy A32",
+            "product_price": 1249,
+            "product_colour": "Black",
+            "delivered_by": 2,
+            "produced_by": "Samsung",
+            "category": "Phones",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/13.jpg"
+        },
+        {
+            "product_id": 14,
+            "product_name": "Whashing machine BEKO WUE8746XWST",
+            "product_price": 1399,
+            "product_colour": "White",
+            "delivered_by": 1,
+            "produced_by": "BEKO",
+            "category": "whashing machines",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/14.jpg"
+        },
+        {
+            "product_id": 15,
+            "product_name": "Whashing machine BEKO WUE7512XAW",
+            "product_price": 1099,
+            "product_colour": "White",
+            "delivered_by": 1,
+            "produced_by": "BEKO",
+            "category": "whashing machines",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/15.jpg"
+        },
+        {
+            "product_id": 16,
+            "product_name": "Built-in washing machine with dryer BOSCH WKD28542EU",
+            "product_price": 5299,
+            "product_colour": "White",
+            "delivered_by": 3,
+            "produced_by": "Bosch",
+            "category": "whashing machines",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/16.jpg"
+        },
+        {
+            "product_id": 17,
+            "product_name": "Washing machine with dryer Samsung WD90TA046BE",
+            "product_price": 2299,
+            "product_colour": "White",
+            "delivered_by": 2,
+            "produced_by": "Samsung",
+            "category": "whashing machines",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/17.jpg"
+        },
+        {
+            "product_id": 18,
+            "product_name": "BOSCH WAN24291BY front washing machine",
+            "product_price": 2796,
+            "product_colour": "White",
+            "delivered_by": 2,
+            "produced_by": "Bosch",
+            "category": "whashing machines",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/18.jpg"
+        },
+        {
+            "product_id": 19,
+            "product_name": "Samsung TV 43AU8072",
+            "product_price": 1899,
+            "product_colour": "Black",
+            "delivered_by": 2,
+            "produced_by": "Samsung",
+            "category": "Tv`s",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/19.jpg"
+        },
+        {
+            "product_id": 20,
+            "product_name": "Philips TV 43PUS8536 / 12",
+            "product_price": 2399,
+            "product_colour": "Grey",
+            "delivered_by": 2,
+            "produced_by": "Philips",
+            "category": "Tv`s",
+            "is_visible": true,
+            "in_stock": false,
+            "path_image":"../../assets/imagesTable/20.jpg"
+        },
+        {
+            "product_id": 21,
+            "product_name": "Philips 43PUS7956 / 12",
+            "product_price": 1999,
+            "product_colour": "Silver",
+            "delivered_by": 2,
+            "produced_by": "Philips",
+            "category": "Tv`s",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/21.jpg"
+        },
+        {
+            "product_id": 22,
+            "product_name": "LED TV SAMSUNG 32T4002",
+            "product_price": 899,
+            "product_colour": "Black",
+            "delivered_by": 1,
+            "produced_by": "Samsung",
+            "category": "Tv`s",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/22.jpg"
+        },
+        {
+            "product_id": 23,
+            "product_name": "VORTEX 32TPHDE1S Smart LED TV",
+            "product_price": 849,
+            "product_colour": "Black",
+            "delivered_by": 3,
+            "produced_by": "Vortex",
+            "category": "Tv`s",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/23.jpg"
+        },
+        {
+            "product_id": 24,
+            "product_name": "CANON EOS 850D DSLR Camera",
+            "product_price": 3199,
+            "product_colour": "Black",
+            "delivered_by": 3,
+            "produced_by": "Canon",
+            "category": "camera",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/24.jpg"
+        },
+        {
+            "product_id": 25,
+            "product_name": "Canon EOS 90D DSLR Camera",
+            "product_price": 6299,
+            "product_colour": "Black",
+            "delivered_by": 3,
+            "produced_by": "Canon",
+            "category": "camera",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/25.jpg"
+        },
+        {
+            "product_id": 26,
+            "product_name": "SONY A7 II Mirrorless Camera",
+            "product_price": 5899,
+            "product_colour": "Black",
+            "delivered_by": 3,
+            "produced_by": "Sony",
+            "category": "camera",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/26.jpg"
+        },
+        {
+            "product_id": 27,
+            "product_name": "Mirrorless camera OLYMPUS E-M1 Mark II",
+            "product_price": 4379,
+            "product_colour": "Black",
+            "delivered_by": 3,
+            "produced_by": "Olympus",
+            "category": "camera",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/27.jpg"
+        },
+        {
+            "product_id": 28,
+            "product_name": "Nikon D3500 DSLR Camera",
+            "product_price": 2499,
+            "product_colour": "Black",
+            "delivered_by": 2,
+            "produced_by": "Nikon",
+            "category": "camera",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/28.jpg"
+        },
+        {
+            "product_id": 29,
+            "product_name": "Beko FSGT62110DXO Gas Cooker",
+            "product_price": 1266,
+            "product_colour": "Grey",
+            "delivered_by": 2,
+            "produced_by": "Beko",
+            "category": "Cookers",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/29.jpg"
+        },
+        {
+            "product_id": 30,
+            "product_name": "Beko FSE62134DCR Gas Cooker",
+            "product_price": 1519,
+            "product_colour": "Beige",
+            "delivered_by": 4,
+            "produced_by": "Beko",
+            "category": "Cookers",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/30.jpg"
+        },
+        {
+            "product_id": 31,
+            "product_name": "Bosch HKS59D250 Electric Cooker",
+            "product_price": 1519,
+            "product_colour": "Grey",
+            "delivered_by": 4,
+            "produced_by": "Beko",
+            "category": "Cookers",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/31.jpg"
+        },
+        {
+            "product_id": 32,
+            "product_name": "Laptop Dell Inspiron 3501",
+            "product_price": 1889,
+            "product_colour": "Black",
+            "delivered_by": 4,
+            "produced_by": "Dell",
+            "category": "Notebooks",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/32.jpg"
+        },
+        {
+            "product_id": 33,
+            "product_name": "Apple iPhone 12 5G mobile phone",
+            "product_price": 4229,
+            "product_colour": "Black",
+            "delivered_by": 4,
+            "produced_by": "Apple",
+            "category": "Phones",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/33.jpg"
+        },
+        {
+            "product_id": 34,
+            "product_name": "Apple iPhone 13 mini 5G mobile phone",
+            "product_price": 5699,
+            "product_colour": "Black",
+            "delivered_by": 4,
+            "produced_by": "Apple",
+            "category": "Phones",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/34.jpg"
+        },
+        {
+            "product_id": 35,
+            "product_name": "Beko RDSA290M30XBN two-door refrigerator",
+            "product_price": 1199,
+            "product_colour": "White",
+            "delivered_by": 2,
+            "produced_by": "Beko",
+            "category": "Refrigerators",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/35.jpg"
+        },
+        {
+            "product_id": 36,
+            "product_name": "Samsung RT50K633PSL / EO two-door refrigerator",
+            "product_price": 2649,
+            "product_colour": "Silver",
+            "delivered_by": 2,
+            "produced_by": "Samsung",
+            "category": "Refrigerators",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/36.jpg"
+        },
+        {
+            "product_id": 37,
+            "product_name": "GORENJE RF4141PW4 two-door refrigerator",
+            "product_price": 999,
+            "product_colour": "White",
+            "delivered_by": 1,
+            "produced_by": "Gorenje",
+            "category": "Refrigerators",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/37.jpg"
+        },
+        {
+            "product_id": 38,
+            "product_name": "Curved Samsung TV 55TU8372",
+            "product_price": 2399,
+            "product_colour": "Black",
+            "delivered_by": 1,
+            "produced_by": "Samsung",
+            "category": "tv`s",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/38.jpg"
+        },
+        {
+            "product_id": 39,
+            "product_name": "SAMSUNG Galaxy A52 phone",
+            "product_price": 1499,
+            "product_colour": "White",
+            "delivered_by": 1,
+            "produced_by": "Samsung",
+            "category": "Phones",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/39.jpg"
+        },
+        {
+            "product_id": 40,
+            "product_name": "Laptop Gaming LENOVO Legion 5 15ACH6H",
+            "product_price": 5499,
+            "product_colour": "Black",
+            "delivered_by": 1,
+            "produced_by": "Lenovo",
+            "category": "Notebooks",
+            "is_visible": true,
+            "in_stock": true,
+            "path_image":"../../assets/imagesTable/40.jpg"
+        }
+    ]
+}

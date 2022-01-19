@@ -1,0 +1,154 @@
+<div id="idMainDiv">
+  <div id="idDivButtonBack">
+    <button id="idButtonBack" type="button" class="btn btn-dark" routerLink="/mainComponent">
+      <i class="fa fa-hand-o-left" aria-hidden="true"></i> Back</button>
+  </div>
+  <div id="idDivFilters">
+    <div id="idDivUp">
+      <label for="idSelectFilter">Choose filter option:</label>
+      <select id="idSelectFilter" class="form-select form-select-sm" aria-label="Default select example"
+        [(ngModel)]="valSelectFIlterOptions" (change)="fnChangeFilterOptions()">
+        <option value="1">Product</option>
+        <option value="2">Price</option>
+        <option value="3">Delivered</option>
+        <option value="4">Producer</option>
+        <option value="5">Category</option>
+      </select>
+      <select id="idSelectFilter1" class="form-select form-select-sm mt-2 classDisplayNone"
+        aria-label="Default select example" [(ngModel)]="valSelectStringOptions" (change)="fnChangeStringOptions()">
+      </select>
+      <select id="idSelectFilter2" class="form-select form-select-sm mt-2 classDisplayNone"
+        aria-label="Default select example" [(ngModel)]="valSelectNumberOptions" (change)="fnChangeNumberOptions()">
+      </select>
+      <select id="idSelectFilter3" class="form-select form-select-sm mt-2 classDisplayNone"
+        aria-label="Default select example" [(ngModel)]="valSelectDeliveredOptions"
+        (change)="fnChangeDeliveredOptions()">
+      </select>
+      <input id="idInputFilters" type="text" class="form-control mt-2" [(ngModel)]="valInputFilters"
+        (input)="fnInputFIlters()">
+      <button id="idButtonFilters" type="button" class="btn btn-dark mt-2" (click)="fnApplyFilters()">Apply
+        filters</button>
+    </div>
+    <div class="form-check mt-2">
+      <input class="form-check-input" type="checkbox" id="idSortByPrice" (click)="fnClickSortByPrice()">
+      <label class="form-check-label" for="idSortByPrice">Filter by price</label>
+    </div>
+    <input type="range" class="form-range" [min]="valMin" [max]="valMax" step="10" id="customRange1"
+      (input)="fnInputRange()" disabled>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <span>{{valMinInputRange}}</span>
+      <span>{{valMaxInputRange}}</span>
+    </div>
+  </div>
+  <div class="fixTableHead">
+    <table class="table table-striped" id="idTable">
+      <thead>
+        <tr id="idThTable">
+          <th scope="col" class="classVerticalAlign">#
+            <input id="idInputCheckbox" class="form-check-input" type="checkbox" (click)="fnShowFilters()">
+          </th>
+          <th scope="col" class="classVerticalAlign">Id
+          </th>
+          <th scope="col"  class="classVerticalAlign">Product
+            <input type="text" class="form-control classBorders" [(ngModel)]="valInputProductName"
+              (input)="fnInputProductName()">
+          </th>
+          <th scope="col"  class="classVerticalAlign">Price
+            <input type="text" class="form-control classBorders" [(ngModel)]="valInputPrice"
+              (input)="fnInputProductPrice()">
+          </th>
+          <th scope="col" class="classVerticalAlign">Delivered
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="valSelectDelivered"
+              (change)="fnChangeDelivered()">
+              <option value="222">(All)</option>
+              <option *ngFor="let i of arrayDelivery" value={{i.id}} [ngStyle]="{'display':(i.id==0)? 'none':''}">
+                {{i.name}}</option>
+            </select>
+          </th>
+          <th scope="col"  class="classVerticalAlign">Producer
+            <input type="text" class="form-control classBorders" [(ngModel)]="valInputProducer"
+              (input)="fnInputProducer()">
+          </th>
+          <th scope="col"  class="classVerticalAlign">Category
+            <input type="text" class="form-control classBorders" [(ngModel)]="valInputCategory"
+              (input)="fnInputCategory()">
+          </th>
+          <th scope="col" class="classVerticalAlign">Stock
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="valSelectStock"
+              (change)="fnChangeStock()">
+              <option value="0">(All)</option>
+              <option value="1">In stock</option>
+              <option value="2">Out of stock</option>
+            </select>
+          </th>
+          <th class="classVerticalAlign">...</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of arrayProducts; let k = index;" class="classHoverTable" id="idRow_{{k}}"
+          (contextmenu)="fnClickRow($event, k)" (clickOutside)="fnCloseWindow()">
+          <td scope="row">{{k+1}}</td>
+          <td>{{i.product_id + 1000}}</td>
+          <td> {{i.product_name | pipeProductTable: i.product_colour}}</td>
+          <td class="classAlignRight">{{i.product_price | pipeTablePrice}}</td>
+          <td class="classAlignRight">{{ fnDelivery(i.delivered_by)}}</td>
+          <td class="classAlignRight">{{i.produced_by | uppercase}}</td>
+          <td class="classAlignRight">{{i.category | titlecase}}</td>
+          <td class="classAlignRight">{{fnStockProduct(i.in_stock,k)}}</td>
+          <td><button type="button" class="btn btn-dark" (click)="fnUpdate(k)">...</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <p class="classAlignRight"><i class="fa fa-window-close" aria-hidden="true" (click)="fnCloseModal()"></i></p>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <p><b>{{valProductName}}</b></p>
+        <img id="idImage">
+      </div>
+      <select class="form-select form-select-sm mt-2" aria-label=".form-select-sm example" id="idSelectStockModal"
+        (change)="fnChangeSelectStockModal()">
+        <option value="1">In stock</option>
+        <option value="2">Out of stock</option>
+      </select>
+      <input type="file" class="form-control mt-2" (change)="fnChangeUpload($event)">
+    </div>
+  </div>
+
+  <div id="idDivDeleteAndAdd">
+    <p class="classHoverOption" id="idAddNewProduct" (click)="fnAddNewProduct()">Add new product&nbsp;&nbsp;&nbsp;
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </p>
+    <p class="classHoverOption" id="idDeleteProduct" (click)="fnDeleteProduct()">Delete product
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </p>
+  </div>
+
+  <div id="myModal1" class="modal">
+    <div id="idDivModalContent" class="modal-content1">
+      <input type="text" class="form-control mb-2 classDisplayNone" placeholder="" 
+      [(ngModel)]="valInputAddProductId" disabled>
+      <input type="text" class="form-control mb-2" placeholder="product name" [(ngModel)]="valInputAddProductName">
+      <input type="number" min="200" class="form-control mb-2" placeholder="product price"
+        [(ngModel)]="valInputAddProductPrice">
+      <select class="form-select form-select-sm mb-2" aria-label=".form-select-sm example"
+        [(ngModel)]="valSelectAddProductDelivered">
+        <option value="1">Altex</option>
+        <option value="2">Emag</option>
+        <option value="3">Media Galaxy</option>
+        <option value="4">Flanco</option>
+        <option value="5">Other</option>
+      </select>
+      <input type="text" class="form-control mb-2" placeholder="producer" [(ngModel)]="valInputAddProductProducer">
+      <input type="text" class="form-control mb-2" placeholder="category" [(ngModel)]="valInputAddProductCategory">
+      <input type="file" class="form-control mb-2" (change)="fnUploadImage($event)">
+      <input class="form-control mb-2" [(ngModel)]="valInputStock" disabled>
+      <button type="button" class="btn btn-dark" id="idButtonAddProduct" (click)="fnAddProduct()">Add product</button>
+      <p id="idMessage">{{alertMessage}}</p>
+    </div>
+  </div>
+  <!--{{i.product_name | titlecase}} - {{i.product_colour | lowercase}}-->
+  

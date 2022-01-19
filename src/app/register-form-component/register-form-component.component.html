@@ -1,0 +1,169 @@
+<div id="idMainDiv" class="classColorBackground">
+    <h2 id="idTitle">REGISTRATION FORM</h2>
+    <div [formGroup]="registerFormDates">
+        <div class="input-group mb-3 ">
+            <label for="idSelectAppelation" class="form-label classLabels classMarginsLeft30px">Person</label>
+            <select class=" ceva form-select classBorderLeft" aria-label="Default select example"
+                id="idSelectAppelation" formControlName="person">
+                <option selected disabled hidden value="">Choose</option>
+                <option *ngFor="let i of selectSex;" value={{i.AppelationId}}>{{i.Appelation}}</option>
+            </select>
+        </div>
+        <div class="classFlex1 classMargins">
+            <div>
+                <label class="form-label classLabels" for="idFirstName">First Name</label>
+            </div>
+            <div>
+                <div class="classFlexColumn">
+                    <input type="text" class="form-control classBorderLeft" id="idFirstName" 
+                    (blur)="fnBlurFirstName()" (focus)="fnFocusFirstName()" (input)="fnInputFirstName()"
+                        [ngClass]="valClassBorderLeftFN" formControlName="firstName">
+                    <span class="classSpanInterpolation"><b>{{interpolationaFirstName}}</b></span>
+                </div>
+            </div>
+            <div>
+                <label class="form-label" id="idLabelLastName" for="idLastName">Last Name</label>
+            </div>
+            <div>
+                <div class="classFlexColumn">
+                    <input type="text" class="form-control classBorderLeft" id="idLastName" (blur)="fnBlurLastName()"
+                        (focus)="fnFocusLastName()" (input)="fnInputLastName()"
+                        [ngClass]="valClassBorderLeftLN" formControlName="lastName">
+                    <span class="classSpanInterpolation">{{interpolationaLastName}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="classMargins">
+            <div class="input-group mb-3 ">
+                <label for="idPIN" class="form-label classLabels">PIN</label>
+                <input type="text" class="form-control classBorderLeft" id="idPIN" (input)="fnInputPIN()"
+                   maxlength="13" formControlName="PIN">
+            </div>
+        </div>
+        <div class="classMargins">
+            <div class="input-group mb-3">
+                <label for="idDateOfBirth" class="form-label classLabels">Date of birth</label>
+                <input type="date" class="form-control classBorderLeft" id="idDateOfBirth"
+                    [(ngModel)]="valDate" formControlName="dateOfBirth">
+            </div>
+        </div>
+        <div class="classFlex mb-3">
+            <label class="classLabels classMarginsLeft30px">Sex</label>
+            <div class="classFlex1 classMarginsLeft30px" id="idDivRadios">
+                <div class="form-check">
+                    <input class="form-check-input classColorRadios" type="radio" value="male" name="sex" 
+                    id="idMale" formControlName="sex">
+                    <label class="form-check-label" for="idMale">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input classColorRadios" type="radio" value="female" name="sex"
+                     id="idFemale" formControlName="sex">
+                    <label class="form-check-label" for="idFemale">Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="classFlex mb-3">
+            <label class="classLabels classMarginsLeft30px">Studies</label>
+            <div class="classFlex1 classMarginsLeft30px" id="idDivChecks">
+                <div class="form-check">
+                    <input class="form-check-input classColorCkeck" type="checkbox" id="idHighSchool"
+                        value="High School" (click)="fnHIghSchoolClick()" 
+                        formControlName="highSchool">
+                    <label class="form-check-label" for="idHighSchool">High School</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input classColorCkeck" type="checkbox" id="idFaculty"
+                        value= "College" (click)="fnCollegeClick()"
+                        formControlName="college">
+                    <label class="form-check-label" for="idFaculty">College</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input classColorCkeck" type="checkbox" id="idMaster"
+                        value="Master" (click)="fnMasterClick()"
+                        formControlName="master">
+                    <label class="form-check-label" for="idMaster">Master</label>
+                </div>
+            </div>
+        </div>
+        <div class="classMargins">
+            <div class="input-group">
+                <label for="idEmail" class="form-label classLabels">Email</label>
+                <div class="classFlexColumn" style="flex:auto">
+                    <div>
+                        <input type="text" class="form-control classBorderLeft" id="idEmail" (blur)="fnBlurEmail()"
+                            (focus)="fnFocusEmail()" (input)="fnInputEmail()"
+                            [ngClass]="valClassBorderLeftE" formControlName="email">
+                    </div>
+                    <span class="classSpanInterpolation"><b>{{interpolationEmail}}</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="classMargins">
+            <div class="input-group">
+                <label for="idUsername" class="form-label classLabels">Username</label>
+                <div class="classFlexColumn" style="flex:auto">
+                    <div>
+                        <input type="text" class="form-control classBorderLeft" id="idUsername"
+                            (blur)="fnBlurUsername()" (focus)="fnFocusUsername()" (input)="fnInputUsername()"
+                            [ngClass]="valClassBorderLeftU"
+                            formControlName="username">
+                    </div>
+                    <span class="classSpanInterpolation"><b>{{interpolationUsername}}</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="classMargins">
+            <div class="input-group mb-1">
+                <label for="idPassword" class="form-label classLabels">Password</label>
+                <div class="classFlexColumn classFlexAuto">
+                    <div class="classFlex2">
+                        <input type="password" class="form-control classBorderLeft" id="idPassword"
+                            (blur)="fnBlurPassword()" (focus)="fnFocusPassword()" (input)="fnInputPassword()"
+                            [ngClass]="valClassBorderLeftP" formControlName="password">
+                        <span class="input-group-text" id="basic-addon2">
+                            <span id="idSpanShow1" class="fa fa-eye-slash" aria-hidden="true"
+                                (mouseenter)="fnShowPassword()" (mouseleave)="fnHidePassword()"></span></span>
+                    </div>
+                    <span class="classSpanInterpolation"
+                        id="idSpanInterpolationConfirm"><b>{{interpolationPassword}}</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="classMargins">
+            <div class="input-group mb-3">
+                <label for="idConfirmPassword" class="form-label classLabels">Confirm password</label>
+                <div class="classFlexColumn classFlexAuto">
+                    <div class="classFlex2">
+                        <input type="password" class="form-control classBorderLeft" id="idConfirmPassword"
+                            (blur)="fnBlurCPassword()" (focus)="fnFocusCPassword()" (input)="fnInputCPassword()"
+                           [ngClass]="valClassBorderLeftPC" formControlName="passwordConfirm">
+                        <span class="input-group-text" id="basic-addon2">
+                            <span id="idSpanShow2" class="fa fa-eye-slash" aria-hidden="true"
+                                (mouseenter)="fnShowConfirmPassword()" (mouseleave)="fnHideConfirmPassword()"></span>
+                        </span>
+                    </div>
+                    <span class="classSpanInterpolation" style="width:420px;"><b>{{interpolationCPassword}}</b></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="classFlex classFullMargins" id="idDivButtons">
+        <button type="button" class="btn btn-dark classWidthButtons" routerLink="/logInFormComponent">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i> Back</button>
+        <button type="button" class="btn btn-dark classWidthButtons" (click)="fnCompleteData()">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Autocomplete</button>
+        <button type="button" class="btn btn-dark classWidthButtons" (click)="fnSaveData()">
+            <i class="fa fa-hdd-o" aria-hidden="true"></i> Save</button>
+        <button type="button" class="btn btn-dark classWidthButtons" (click)="fnDeleteData()">
+            <i class="fa fa-trash" aria-hidden="true"></i> Clear</button>
+    </div>
+    <div id="idMessageUserOrEmail" class="modal">
+        <div class="modal-content1">
+            <span id="idSpanMessage">This email or username was allready introduced!</span>
+            <div id="idDivButtonBack">
+                <button type="button" id="idButtonBack" class="btn btn-dark"
+                (click)="fnBack()">Back</button>
+            </div>
+        </div>
+    </div>
+</div>

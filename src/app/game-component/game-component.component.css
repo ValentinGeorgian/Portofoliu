@@ -1,0 +1,91 @@
+:host
+{
+    --x: url("../../assets/Images/puzzle.jpg");
+    --y: url("../../assets/Images/x_0.jpg");
+}
+
+.classButtons
+{
+    width:20rem;
+    height:20rem;
+    font-size: 3rem;
+    color:black;
+}
+
+#idDivButtonBack
+{
+    width:100%; 
+    height:auto; 
+    padding-top:1rem; 
+    margin-bottom:1rem;
+    z-index: 1;
+}
+
+#idButton1
+{
+    background-image: var(--y);
+    background-size: 120%;
+}
+
+#idButton2
+{
+    background-image: var(--x);
+    background-size: 180%;
+}
+
+#idButtonBack
+{
+    width:15%; 
+    margin-left:2rem;
+}
+
+#idDivGames
+{
+    width:90%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top:5rem;
+}
+
+#idDivFlex
+{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around;
+}
+
+#idMainDiv
+{
+    background-color: rgb(197, 191, 191);
+    padding-bottom: 6.65rem;
+    height:100vh;
+}
+
+@media screen and (max-width:767px)
+{
+    #idButtonBack
+    {
+        width:25%; 
+        margin-left:2rem;
+    }
+
+    #idButton1
+    {
+        width:40%;
+        font-size: 2rem;
+        font-weight: 500;
+        background-size: 275%;
+    }
+
+    #idButton2
+    {
+        width:40%;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    #idMainDiv
+    {
+        padding-bottom: 5.8rem;
+    }
+}
